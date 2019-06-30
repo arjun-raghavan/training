@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assessment Manager</title>
+</head>
+<body>
+	<form action="/login" method="POST" name="login">
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>User Id</td>
+					<td><input type="text" name="userid" id="userid" value=""></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" id="password"
+						value=""></td>
+				</tr>
+				<tr>
+					<td>User Role</td>
+					<td><select name="select_role" id="select_role">
+							<option value="user">User</option>
+							<option value="admin">Admin</option>
+					</select></td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="submit" name="submit" value="submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+login-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:5001
+    ServerListRefreshInterval: 15000
+
+spring:
+  application:
+     name: login-service     
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}    
+    
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5001/eureka
+      
+pivotal:
+  adminservice:
+    name: admin-service
+  loginservice:
+    name: login-service
+  assessmentservice:
+    name: assessment-service
+  employeeservice:
+    name: employee-service
+    
+server:
+  port: 7081

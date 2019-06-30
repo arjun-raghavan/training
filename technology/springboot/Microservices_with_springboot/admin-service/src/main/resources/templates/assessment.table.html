@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assessment Register</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+<div class="container">
+	<h1>Assessment Table</h1>
+	<div class="row col-md-7 table-responsive">
+		<table id="assessmentTable" class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>User ID</th>
+					<th>Assessment Name</th>
+					<th>Date</th>
+					<th>Assessment Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				 <tr th:each="assessment, rowStat: ${assessments}"
+				 	 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
+			        <td th:text="${assessment.id}">1</td>
+					<td th:text="${assessment.userId}">Jack</td>
+			        <td th:text="${assessment.assessmentName}">23</td>
+			        <td th:text="${assessment.assessmentDate}">AVE N</td>
+			        <td th:text="${assessment.assessmentType}">77587</td>
+			    </tr>
+			</tbody>
+		</table>
+	</div>
+</div>
