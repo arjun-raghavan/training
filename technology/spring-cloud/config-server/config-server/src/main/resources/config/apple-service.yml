@@ -1,0 +1,2 @@
+apple:
+  message: "Hello Apple from classpath config"
