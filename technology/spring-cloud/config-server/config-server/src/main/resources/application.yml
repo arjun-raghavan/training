@@ -1,13 +1,15 @@
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
+#  profiles:
+#    active: native
   cloud:
     config:
       server:
-        native:
-          searchLocations: classpath:config/
+        git:
+          uri: D:/sts-workspace/spring-cloud/config-server/config-repo-git
+#        native:
+#          searchLocations: classpath:config/
 #          searchLocations: D:/sts-workspace/spring-cloud/config-server/config-server/src/main/resources/config
 
 server:
