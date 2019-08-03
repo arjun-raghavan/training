@@ -5,13 +5,21 @@ package com.perseverance.agentmanagement.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * @author AR350758
  * Agent.java Aug 2, 2019 5:07:12 PM
  */
+@Entity
 public class Agent {
 
+	@Id
+	@GeneratedValue
 	private long id;
+	
 	private String name;
 	private boolean isActive;
 	private int status;
@@ -19,8 +27,9 @@ public class Agent {
 	private Date deactivationDate;
 	private Date dateOfBirth;
 	
+	public Agent() {}
+	
 	/**
-	 * @param id
 	 * @param name
 	 * @param isActive
 	 * @param status
@@ -28,10 +37,9 @@ public class Agent {
 	 * @param deactivationDate
 	 * @param dateOfBirth
 	 */
-	public Agent(long id, String name, boolean isActive, int status, Date registrationDate, Date deactivationDate,
+	public Agent(String name, boolean isActive, int status, Date registrationDate, Date deactivationDate,
 			Date dateOfBirth) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.isActive = isActive;
 		this.status = status;
