@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-server
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: D:/sts-workspace/spring-cloud/config-server/config-repo-git
+#        native:
+#          searchLocations: classpath:config/
+#          searchLocations: D:/sts-workspace/spring-cloud/config-server/config-server/src/main/resources/config
+
+server:
+  port: 8888
+  
+endpoints:
+    restart:
+      enabled: true
