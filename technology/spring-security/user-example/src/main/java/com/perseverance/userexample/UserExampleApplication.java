@@ -1,4 +1,4 @@
-package com.perseverance.springsecurityexample;
+package com.perseverance.userexample;
 
 import java.util.TimeZone;
 
@@ -11,19 +11,18 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 @SpringBootApplication
 @EntityScan(basePackageClasses = { 
-		SpringSecurityExampleApplication.class,
+		UserExampleApplication.class,
 		Jsr310JpaConverters.class 
 })
-public class SpringSecurityExampleApplication {
+public class UserExampleApplication {
 
 	@PostConstruct
 	void init() {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 	}
-
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecurityExampleApplication.class, args);
+		SpringApplication.run(UserExampleApplication.class, args);
 	}
 
 }
