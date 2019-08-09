@@ -23,6 +23,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.perseverance.userexample.model.audit.DateAudit;
 
 import lombok.Getter;
@@ -65,6 +67,7 @@ public class User extends DateAudit {
 
 	@NotBlank
 	@Size(max = 100)
+	@JsonIgnore
 	private String password;
 
 	@ManyToMany(fetch = FetchType.LAZY)

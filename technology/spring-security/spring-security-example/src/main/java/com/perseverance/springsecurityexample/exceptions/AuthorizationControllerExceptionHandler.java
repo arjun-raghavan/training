@@ -1,8 +1,9 @@
 /**
  * 
  */
-package com.perseverance.userexample.exceptions;
+package com.perseverance.springsecurityexample.exceptions;
 
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
