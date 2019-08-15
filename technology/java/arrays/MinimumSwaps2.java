@@ -30,9 +30,33 @@ public class MinimumSwaps2 {
 		int[] arr = new int[] { 1, 3, 5, 2, 4, 6, 7 };
 //		 System.out.println(minimumSwaps(arr));
 		int[] arr1 = new int[] { 7, 1, 3, 2, 4, 5, 6 };
-		minimumSwaps(arr1);
+		minSwaps(arr1);
 		int[] arr2 = new int[] { 4, 3, 1, 2 };
-		//minimumSwaps(arr2);
+		// minimumSwaps(arr2);
+	}
+
+	static int minSwaps(int[] arr) {
+		int swapCount = 0;
+		boolean[] visitedArray = new boolean[arr.length];
+
+		for (int i = 0; i < arr.length; i++) {
+			if (visitedArray[i] == true) {
+				continue;
+			}
+
+			int traverseIndex = i;
+			int cycleCount = 0;
+			while (!visitedArray[traverseIndex]) {
+				visitedArray[traverseIndex] = true;
+				traverseIndex = arr[traverseIndex] - 1;
+				cycleCount++;
+			}
+			
+			if(cycleCount > 1)
+			swapCount += cycleCount -1;
+		}
+
+		return swapCount;
 	}
 
 	// Complete the minimumSwaps function below.
@@ -59,7 +83,7 @@ public class MinimumSwaps2 {
 					swapCount++;
 					break;
 				} else {
-					if (swappedIndex == (arr[index]-1)) {
+					if (swappedIndex == (arr[index] - 1)) {
 						arr[swappedIndex] = arr[index];
 						arr[index] = firstValue;
 						swapCount++;
