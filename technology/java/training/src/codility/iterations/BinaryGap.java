@@ -26,9 +26,10 @@ public class BinaryGap {
 			if(workerATime == workerBTime) {
 				
 			}
+			return false;
 		}
 		
-		return false;
+		
 		
 	}
 }
