@@ -30,7 +30,7 @@ public class MinimumSwaps2 {
 		int[] arr = new int[] { 1, 3, 5, 2, 4, 6, 7 };
 //		 System.out.println(minimumSwaps(arr));
 		int[] arr1 = new int[] { 7, 1, 3, 2, 4, 5, 6 };
-		minSwaps(arr1);
+		System.out.println(minSwaps(arr1));
 		int[] arr2 = new int[] { 4, 3, 1, 2 };
 		// minimumSwaps(arr2);
 	}
@@ -47,11 +47,13 @@ public class MinimumSwaps2 {
 			int traverseIndex = i;
 			int cycleCount = 0;
 			while (!visitedArray[traverseIndex]) {
+				System.out.print(traverseIndex+" ");
 				visitedArray[traverseIndex] = true;
 				traverseIndex = arr[traverseIndex] - 1;
 				cycleCount++;
 			}
 			
+			System.out.println(" ");
 			if(cycleCount > 1)
 			swapCount += cycleCount -1;
 		}
