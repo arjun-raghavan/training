@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.site-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 100px;
+  max-width: 800px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  height: 2.5rem;
+  background-color: rgb(13, 180, 189);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.5rem;
+}
+
+.main-header__brand {
+  vertical-align: middle;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.main-nav {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav__items {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav__item {
+  font-size: 0.8rem;
+  color: white;
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav__item a {
+  text-decoration: none;
+}
+
+.main-nav__item:hover,
+.main-nav__item:active {
+  color: white;
+  background-color: rgb(179, 241, 241);
+  cursor: pointer;
+}
+
+main {
+  height: calc(100vh - 2.5rem - 4.5rem);
+  background-color: azure;
+  margin-top: 2.5rem;
+}
+
+.carousel {
+  max-width: 500px;
+}
+
+/* overviews section*/
+
+.overviews {
+  display: flex;
+  justify-content: center;
+}
+
+.overview {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid #8b8b8b;
+}
+
+.overview__title {
+  font-size: 1.2rem;
+  color: rgba(114, 110, 110, 0.884);
+}
+
+.overview__text {
+  font-size: 1rem;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+/* Detais Section */
+.detail-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  width: 30%;
+  text-align: center;
+}
+
+.detail__title {
+  font-size: 1rem;
+  color: rgba(114, 110, 110, 0.884);
+  font-weight: bold;
+}
+
+.detail__text {
+  font-size: 0.8rem;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+.detail img {
+  width: 2.5rem;
+  height: 2rem;
+}
+
+/* Infos Section */
+
+.info {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-about,
+.info-latest,
+.info-stayin {
+  width: 30%;
+}
+
+.info-about__tile {
+  display: block !important;
+  color: rgb(13, 180, 189);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.info-about__desc {
+  font-size: 0.8rem;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+.info-latest {
+}
+
+.info-latest__title,
+.info-stayin__title {
+  font-size: 1rem;
+  color: rgba(114, 110, 110, 0.884);
+  font-weight: bold;
+}
+.posts {
+  list-style: none;
+  padding: 0;
+}
+.post-item {
+  font-size: 0.8rem;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+  border-bottom: 1px solid #e2dfdf;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.info-content {
+  margin-top: 20px;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+.info-content i {
+}
+
+.info-stayin p {
+  margin: 0;
+  padding: 0;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+.info-stayin__desc {
+  font-size: 0.8rem;
+  color: rgb(170, 167, 167);
+  font-weight: normal;
+}
+
+footer {
+  width: 100%;
+  height: 4.5rem;
+  background-color: rgb(13, 180, 189);
+}
+
+.main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+.footer-info__copyright {
+  color: white;
+  margin: 0.1rem 0rem;
+  /* padding: 0.5 0rem; */
+}
+
+.footer-info__design {
+  color: white;
+  margin: 0.1rem 0rem;
+  /* padding: 0.5 0rem; */
+}
+
+.footer-shortcuts i {
+  margin-left: 5px;
+}
