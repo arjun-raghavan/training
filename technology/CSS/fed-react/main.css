@@ -13,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-.container {
+.site-container {
   margin: 0 100px;
   max-width: 800px;
 }
@@ -21,28 +21,28 @@ body {
 header {
   width: 100%;
   position: fixed;
-  height: 2.5rem;
+  height: 4rem;
   background-color: rgb(13, 180, 189);
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 2.5rem;
+  height: 4rem;
 }
 
 .main-header__brand {
   vertical-align: middle;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .main-nav {
-  height: 2.5rem;
+  height: 4rem;
   display: flex;
   align-items: center;
 }
@@ -55,10 +55,10 @@ header {
 }
 
 .main-nav__item {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: white;
   padding: 0 0.5rem;
-  height: 2.5rem;
+  height: 4rem;
   display: flex;
   align-items: center;
 }
@@ -83,9 +83,9 @@ header {
 }
 
 main {
-  height: calc(100vh - 2.5rem - 4.5rem);
+  height: calc(100vh - 4rem - 4.5rem);
   /* background-color: azure; */
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 .carousel {
@@ -117,6 +117,7 @@ main {
 .overview__text {
   font-size: 1.2rem;
   color: rgb(170, 167, 167);
+  margin-bottom: 40px;
   font-weight: normal;
 }
 
@@ -140,13 +141,14 @@ main {
   font-size: 1.5rem;
   color: rgba(114, 110, 110, 0.884);
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .detail__text {
   font-size: 1.2rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 
 .detail img {
@@ -216,7 +218,7 @@ main {
 .info-content i {
 }
 
-.info-stayin p {
+.info-content p {
   margin: 0;
   padding: 0;
   color: rgb(170, 167, 167);
@@ -262,4 +264,13 @@ footer {
 
 .footer-shortcuts i {
   margin-left: 5px;
+}
+
+button {
+  background-color: white;
+  font: inherit;
+  font-size: 1rem;
+  border: 1px solid #8b8b8b;
+  height: 3rem;
+  width: 8rem;
 }
