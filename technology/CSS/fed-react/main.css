@@ -55,7 +55,7 @@ header {
 }
 
 .main-nav__item {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: white;
   padding: 0 0.5rem;
   height: 2.5rem;
@@ -65,10 +65,18 @@ header {
 
 .main-nav__item a {
   text-decoration: none;
+  color: white;
 }
 
 .main-nav__item:hover,
 .main-nav__item:active {
+  color: white;
+  background-color: rgb(179, 241, 241);
+  cursor: pointer;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
   color: white;
   background-color: rgb(179, 241, 241);
   cursor: pointer;
@@ -81,7 +89,10 @@ main {
 }
 
 .carousel {
-  max-width: 500px;
+  max-width: 800px;
+  height: 290px;
+  display: flex;
+  margin: 10px auto 10px auto;
 }
 
 /* overviews section*/
@@ -98,17 +109,23 @@ main {
 }
 
 .overview__title {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   color: rgba(114, 110, 110, 0.884);
 }
 
 .overview__text {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
 }
 
-/* Detais Section */
+/* Details Section */
+.details,
+.infos {
+  margin: 25px 0 50px 0;
+}
+
 .detail-list {
   display: flex;
   justify-content: space-between;
@@ -120,15 +137,16 @@ main {
 }
 
 .detail__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: rgba(114, 110, 110, 0.884);
   font-weight: bold;
 }
 
 .detail__text {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
+  margin-top: 10px;
 }
 
 .detail img {
@@ -154,12 +172,13 @@ main {
   display: block !important;
   color: rgb(13, 180, 189);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .info-about__desc {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
 }
@@ -169,16 +188,18 @@ main {
 
 .info-latest__title,
 .info-stayin__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: rgba(114, 110, 110, 0.884);
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .posts {
   list-style: none;
   padding: 0;
+  margin-bottom: 10px;
 }
 .post-item {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
   border-bottom: 1px solid #e2dfdf;
@@ -203,7 +224,7 @@ main {
 }
 
 .info-stayin__desc {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(170, 167, 167);
   font-weight: normal;
 }
