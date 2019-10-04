@@ -14,8 +14,8 @@ body {
 }
 
 .site-container {
-  margin: 0 100px;
-  max-width: 800px;
+  margin: 0 10px;
+  min-width: 300px;
 }
 
 header {
@@ -41,10 +41,16 @@ header {
   font-size: 2rem;
 }
 
+.mobile-nav__button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobile-nav {
+}
+
 .main-nav {
-  height: 4rem;
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .main-nav__items {
@@ -91,7 +97,7 @@ main {
 
 .carousel {
   max-width: 800px;
-  height: 290px;
+  height: 18rem;
   display: flex;
   margin: 10px auto 10px auto;
 }
@@ -130,12 +136,13 @@ main {
 
 .detail-list {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .detail {
-  width: 30%;
+  width: 100%;
   text-align: center;
+  margin: 20px;
 }
 
 .detail__title {
@@ -157,18 +164,34 @@ main {
   height: 2rem;
 }
 
+.detail button {
+  background-color: white;
+  font: inherit;
+  font-size: 1rem;
+  border: 1px solid #8b8b8b;
+  height: 3rem;
+  width: 8rem;
+}
+
+.detail button:hover {
+  background-color: rgb(13, 180, 189);
+  color: white;
+  border: 1px solid rgb(13, 180, 189);
+}
+
 /* Infos Section */
 
 .info {
   margin: 20px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .info-about,
 .info-latest,
 .info-stayin {
-  width: 30%;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .info-about__tile {
@@ -266,18 +289,42 @@ footer {
 .footer-shortcuts i {
   margin-left: 5px;
 }
+@media (min-width: 600px) {
+  .site-container {
+    margin: 0 100px;
+    max-width: 800px;
+  }
 
-button {
-  background-color: white;
-  font: inherit;
-  font-size: 1rem;
-  border: 1px solid #8b8b8b;
-  height: 3rem;
-  width: 8rem;
-}
+  .mobile-nav,
+  .mobile-nav__button {
+    display: none;
+  }
+  .main-nav {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+  }
 
-button:hover {
-  background-color: rgb(13, 180, 189);
-  color: white;
-  border: 1px solid rgb(13, 180, 189);
+  .detail-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .detail {
+    width: 30%;
+    text-align: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-about,
+  .info-latest,
+  .info-stayin {
+    width: 30%;
+  }
 }
