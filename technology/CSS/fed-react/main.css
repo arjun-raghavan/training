@@ -76,7 +76,7 @@ header {
 
 main {
   height: calc(100vh - 2.5rem - 4.5rem);
-  background-color: azure;
+  /* background-color: azure; */
   margin-top: 2.5rem;
 }
 
