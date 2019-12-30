@@ -60,6 +60,7 @@ const checkJwt = jwt({
 
 // insert a new question
 app.post("/", checkJwt, (req, res) => {
+  console.log("Post a question");
   const { title, description } = req.body;
   const newQuestion = {
     id: questions.length + 1,
