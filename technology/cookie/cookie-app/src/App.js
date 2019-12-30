@@ -1,5 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Route } from "react-router-dom";
+import NavBar from "./NavBar/NavBar";
+import Question from "./Question/Question";
+import Questions from "./Questions/Questions";
 import "./App.css";
 import Cookies from "js-cookie";
 
@@ -16,21 +19,10 @@ class App extends React.Component {
     console.log("ext_name: " + this.state.ext_name);
     console.log("username: " + this.state.username);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <NavBar />
+        <Route exact path="/" component={Questions} />
+        <Route exact path="/question/:questionId" component={Question} />
       </div>
     );
   }
