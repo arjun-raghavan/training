@@ -49,12 +49,14 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://<YOUR_AUTH0_DOMAIN>/.well-known/jwks.json`
+    jwksUri: `https://arjun-raghavan.auth0.com/.well-known/jwks.json`
   }),
 
   // Validate the audience and the issuer.
-  audience: "<YOUR_AUTH0_CLIENT_ID>",
-  issuer: `https://<YOUR_AUTH0_DOMAIN>/`,
+  //audience: "<YOUR_AUTH0_CLIENT_ID>",
+  audience: "8Ij9vM8vMpUu29TPhNe1tn1yIAWMdB4m",
+  //issuer: `https://<YOUR_AUTH0_DOMAIN>/`,
+  issuer: `https://arjun-raghavan.auth0.com/`,
   algorithms: ["RS256"]
 });
 
