@@ -22,6 +22,50 @@
     <td>{{XIRR(fund)}}</td>
     </tr>
     </table>
+    <br>
+    <div>
+      <div>
+        <table id="investments">
+          <tr>
+            <th>Name of fund</th>
+            <th>Date</th>
+            <th>Total Units</th>
+            <th>Nav</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option v-for="fund in funds" :key="fund.name">{{fund.name}}</option>
+              </select>
+            </td>
+            <td><input type="date"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td class="panel-body">
+              <button class="btn btn-info pull-left"> Add </button>
+              <button class="btn btn-warning pull-right"> Clear </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br>
+
+    <div class="panel panel-info">
+      <div>
+        <form enctype="multipart/form-data">
+          <input type="file" @change="onFileChange">
+        </form>
+        <select>
+          <option v-for="fund in funds" :key="fund.name">{{fund.name}}</option>
+        </select>
+        <div>
+          <button class="btn btn-info"> Add to portfolio</button>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
 </template>
 

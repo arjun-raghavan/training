@@ -1,8 +1,5 @@
 <template>
   <div>
-    <form enctype="multipart/form-data">
-      <input type="file" @change="onFileChange">
-    </form>
     <table id="investments">
     <tr>
     <th>SIP Date</th>
@@ -27,9 +24,7 @@
     <td>{{entry.investedValue}}</td>
     </tr>
     </table>
-    <table>
-      <tr v-for="person in persons" :key="person">{{person}}</tr>
-    </table>
+    <br>
   </div>
 </template>
 
