@@ -10,7 +10,7 @@
       <th>Folio No</th>
       <th>Name of fund</th>
       <th>Total Units</th>
-      <th>Current Nav</th>
+      <th>Average Nav</th>
       <th>Invested Value</th>
       <th>Current Value</th>
       <th>Profit</th>
