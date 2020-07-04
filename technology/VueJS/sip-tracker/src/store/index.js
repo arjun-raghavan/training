@@ -142,5 +142,6 @@ export default new Vuex.Store({
     supportedFunds: (state) => state.funds,
     myPortfolio: (state) => state.portfolio,
     navHistory: (state) => state.nav,
+    investments: (state) => state.investments,
   },
 });

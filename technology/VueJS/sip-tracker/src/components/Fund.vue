@@ -1,44 +1,12 @@
 <template>
-<div class="row">
-  <div class="page-header">
-    <h1>Portfolio</h1>
+  <div class="row">
+    <div class="alert alert-success" role="alert">Add Fund</div>
   </div>
-  <div class="alert alert-success" role="alert">Summary</div>
-  <div class="panel panel-default">
-    <table id="portfolio">
-      <tr>
-      <th>Folio No</th>
-      <th>Name of fund</th>
-      <th>Total Units</th>
-      <th>Current Nav</th>
-      <th>Invested Value</th>
-      <th>Current Value</th>
-      <th>Profit</th>
-      <th>XIRR</th>
-      </tr>
-      <tr v-for="fund in portfolio" :key="fund.name">
-      <td>{{fund.folio}}</td>
-      <td>{{fund.name}}</td>
-      <td>{{fund.units}}</td>
-      <td>{{fund.nav}}</td>
-      <td>{{fund.investment}}</td>
-      <td>{{currentValue(fund)}}</td>
-      <td>{{profit(fund)}}</td>
-      <td>{{XIRR(fund)}}</td>
-      </tr>
-    </table>
-  </div>
-  <Fund/>
-</div>
 </template>
 
 <script>
-import Fund from '@/components/Fund.vue';
 
 export default {
-  components: {
-    Fund,
-  },
   computed: {
     portfolio() {
       return this.$store.getters.myPortfolio;
