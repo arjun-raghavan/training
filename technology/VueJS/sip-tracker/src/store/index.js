@@ -133,6 +133,16 @@ export default new Vuex.Store({
     ],
   },
   mutations: {
+    addNav: (state, payload) => {
+      console.log(payload);
+      state.nav.forEach((element, index) => {
+        if (element.name === payload.name) {
+          state.nav[index].currentDate = payload.date;
+          state.nav[index].curentNav = payload.nav;
+          state.nav[index].history.unshift({ date: payload.date, nav: payload.nav });
+        }
+      });
+    },
   },
   actions: {
   },

@@ -41,15 +41,18 @@ export default {
   },
   methods: {
     updateNav() {
-      const payload = {
-        name: this.fundnav.name,
-        nav: this.nav,
-      };
       console.log(this.date);
       const date1 = this.date.split('-');
       const newDate = `${date1[2]}-${date1[1]}-${date1[0]}`;
       console.log(newDate);
-      console.log(`updateNav : ${payload.name} ${payload.nav}`);
+
+      const payload = {
+        name: this.fundnav.name,
+        nav: this.nav,
+        date: newDate,
+      };
+      console.log(payload);
+      this.$store.commit('addNav', payload);
     },
   },
 };

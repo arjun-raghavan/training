@@ -10,7 +10,7 @@
       <th>Folio No</th>
       <th>Name of fund</th>
       <th>Total Units</th>
-      <th>Average Nav</th>
+      <th>Current Nav</th>
       <th>Invested Value</th>
       <th>Current Value</th>
       <th>Profit</th>
@@ -20,7 +20,7 @@
       <td>{{fund.folio}}</td>
       <td>{{fund.name}}</td>
       <td>{{fund.units}}</td>
-      <td>{{fund.nav}}</td>
+      <td>{{currentNav(fund)}}</td>
       <td>{{fund.investment}}</td>
       <td>{{currentValue(fund)}}</td>
       <td>{{profit(fund)}}</td>
@@ -36,6 +36,9 @@
 import Fund from '@/components/Fund.vue';
 
 export default {
+  data() {
+    return {};
+  },
   components: {
     Fund,
   },
@@ -43,14 +46,24 @@ export default {
     portfolio() {
       return this.$store.getters.myPortfolio;
     },
+    nav() {
+      return this.$store.getters.navHistory;
+    },
   },
   methods: {
     convertToFixedDecimal(value) {
       return Number(value.toFixed(2));
     },
+    currentNav(fund) {
+      console.log('currentNav');
+      const fundNav = this.nav.find(
+        (nav) => nav.name === fund.name,
+      );
+      if (fundNav) { return fundNav.curentNav; }
+      return 0;
+    },
     currentValue(fund) {
-      const history = this.$store.getters.navHistory;
-      const fundNav = history.find(
+      const fundNav = this.nav.find(
         (nav) => nav.name === fund.name,
       );
 
