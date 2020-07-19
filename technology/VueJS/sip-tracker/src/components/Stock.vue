@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div>
+    <div >
       {{stock.name}}
     </div>
     <div class="panel panel-default">
@@ -19,7 +19,9 @@
         <td>{{investment.qty}}</td>
         <td>{{investment.price}}</td>
         <td>{{stock.currentPrice}}</td>
-        <td>{{ltcg(investment, stock)}}</td>
+        <td :class="{error: ltcg(investment, stock) >= 0 ? false : true}">
+          {{ltcg(investment, stock)}}
+        </td>
         <td>{{stcg(investment, stock)}}</td>
         <td>{{returns(investment, stock)}}</td>
         </tr>
@@ -43,14 +45,14 @@ export default {
     ltcg(investment, stock) {
       const numberOfMonths = this.differenceBetweenMonths(stock.currentDate, investment.date);
       if (numberOfMonths < 12) {
-        return '-';
+        return '0';
       }
       return this.profit(investment, stock);
     },
     stcg(investment, stock) {
       const numberOfMonths = this.differenceBetweenMonths(stock.currentDate, investment.date);
       if (numberOfMonths >= 12) {
-        return '-';
+        return '';
       }
       console.log((numberOfMonths));
       return ((stock.currentPrice - investment.price) * investment.qty).toFixed(2);
@@ -105,6 +107,11 @@ export default {
   text-align: left;
 }
 
+#portfolio td.error {
+  border: 1px solid red;
+  background-color: #ffc9ae;
+}
+
 #portfolio tr:nth-child(even){background-color: #f2f2f2;}
 
 #portfolio tr:hover {background-color: #ddd;}
@@ -115,5 +122,10 @@ export default {
   text-align: left;
   background-color: #4CAF50;
   color: white;
+}
+
+.error{
+  border: 1px solid red;
+  background-color: #ffc9ae;
 }
 </style>
