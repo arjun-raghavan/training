@@ -136,8 +136,8 @@ export default new Vuex.Store({
       {
         name: 'maruti',
         totalQuantity: 30,
-        currentDate: '7-7-2020',
-        currentPrice: 6268.65,
+        currentDate: '17-7-2020',
+        currentPrice: 5918.05,
         investments: [
           { date: '26-10-2017', qty: 1, price: 7991.84 },
           { date: '30-10-2017', qty: 1, price: 8308.89 },
@@ -167,6 +167,7 @@ export default new Vuex.Store({
           { date: '15-6-2020', qty: 1, price: 5567.88 },
           { date: '22-6-2020', qty: 1, price: 5919.59 },
           { date: '29-6-2020', qty: 1, price: 5824.09 },
+          { date: '9-7-2020', qty: 1, price: 6017.42 },
         ],
       },
     ],

@@ -19,7 +19,7 @@
         <td>{{investment.qty}}</td>
         <td>{{investment.price}}</td>
         <td>{{stock.currentPrice}}</td>
-        <td :class="{loss: ltcg(investment, stock) >= 0 ? false : true}">
+        <td :class="{loss: ltcg(investment, stock) < 0 }">
           {{ltcg(investment, stock)}}
         </td>
         <td :class="{loss: stcg(investment, stock) >= 0 ? false : true,
