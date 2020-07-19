@@ -19,10 +19,13 @@
         <td>{{investment.qty}}</td>
         <td>{{investment.price}}</td>
         <td>{{stock.currentPrice}}</td>
-        <td :class="{error: ltcg(investment, stock) >= 0 ? false : true}">
+        <td :class="{loss: ltcg(investment, stock) >= 0 ? false : true}">
           {{ltcg(investment, stock)}}
         </td>
-        <td>{{stcg(investment, stock)}}</td>
+        <td :class="{loss: stcg(investment, stock) >= 0 ? false : true,
+                      gain: stcg(investment, stock) > 0 ? true : false}">
+          {{stcg(investment, stock)}}
+        </td>
         <td>{{returns(investment, stock)}}</td>
         </tr>
       </table>
@@ -52,7 +55,7 @@ export default {
     stcg(investment, stock) {
       const numberOfMonths = this.differenceBetweenMonths(stock.currentDate, investment.date);
       if (numberOfMonths >= 12) {
-        return '';
+        return '0';
       }
       console.log((numberOfMonths));
       return ((stock.currentPrice - investment.price) * investment.qty).toFixed(2);
@@ -124,8 +127,13 @@ export default {
   color: white;
 }
 
-.error{
+.loss{
   border: 1px solid red;
   background-color: #ffc9ae;
+}
+
+.gain{
+  border: 1px solid greenyellow;
+  background-color: rgb(123, 207, 40);
 }
 </style>
