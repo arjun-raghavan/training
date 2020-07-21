@@ -10,8 +10,9 @@
   <body>
     <div id="app">
       <!-- EVENT MODIFIERS EXAMPLE -->
-      <button v-on:click="increment">Click Me</button>
+      <button v-on:click="counter++">Click Me</button>
       <p> {{ counter }}</p>
+      <p> {{ counter > 10 ? 'Greater than 10' : 'Less than 10' }}</p>
       <button v-on:click="increase(2, $event)">increment by two</button>
       <hr>
       <!-- COORDINATES DON'T GET UPDATED ON DEAD SPOT -->
