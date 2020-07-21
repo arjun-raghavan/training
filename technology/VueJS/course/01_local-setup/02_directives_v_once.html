@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <p>whereever title is used gets re-renderd</p> -->
+      <p v-once>{{ title }}</p>
+      <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello World',
+          link: 'http://google.com'
+        },
+        methods: {
+          sayHello: function(){
+            this.title = "Hello!";
+            return this.title;
+          }
+        }
+      }
+      );
+    </script>
+  </body>
+</html>
