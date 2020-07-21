@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- TRADITIONAL WAY -->
+      <h1>TRADITIONAL WAY</h1>
+      <button v-on:click="increment">increment</button>
+      <button v-on:click="decrement">decrement</button>
+      <p> {{ counter }}</p>
+      <p> {{ result() }}</p>
+      <hr>
+      <!-- COMPUTED WAY -->
+      <h1>COMPUTED WAY</h1>
+      <button v-on:click="newCounter++">Computed increment</button>
+      <button v-on:click="newCounter--">Computed decrement</button>
+      <p> {{ newCounter }}</p>
+      <p> {{ newResult }}</p>
+      <p> {{ newResultNonComputed() }}</p>
+      <!-- newResultNonComputed function gets called everytime. newResult gets called only when there is a change -->
+      <!-- computed property always needs to run synchronosuly -->
+      <!-- watch will be called whenever data property that you are watching on changes -->
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+          newCounter: 0,
+        },
+        computed: {
+          newResult : function(){
+            console.log('newResult - computed');
+            return this.newCounter > 10 ? 'Greater than 10' : 'Less than 10';
+          }
+        },
+        watch: {
+          counter: function(value){
+            var vm = this;
+            setTimeout(function(){
+              vm.counter = 0;
+            },2000);
+          }
+        },
+        methods: {
+          increment: function(){
+            this.counter++;
+          },
+          decrement: function(){
+            this.counter--;
+          },
+          result: function(){
+            return this.counter > 10 ? 'Greater than 10' : 'Less than 10';
+          },
+          newResultNonComputed: function(){
+            console.log('newResultNonComputed - normal method');
+            return this.newCounter > 10 ? 'Greater than 10' : 'Less than 10';
+          }
+        }
+      }
+      );
+    </script>
+  </body>
+</html>
