@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- EVENT MODIFIERS EXAMPLE -->
+      <button v-on:click="increment">Click Me</button>
+      <p> {{ counter }}</p>
+      <button v-on:click="increase(2, $event)">increment by two</button>
+      <hr>
+      <!-- COORDINATES DON'T GET UPDATED ON DEAD SPOT -->
+      <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove="stopPropagation">DEAD SPOT</span>
+        - <span v-on:mousemove.stop="">ANOTHER DEAD SPOT</span>
+      </p>
+      <!-- KEY MODIFIERS EXAMPLE -->
+      <div>
+      <span>
+        <label>every key up alert</label>
+        <input type="text" v-on:keyup="alertMe">
+      </span>
+    </div>
+    <br>
+    <div>
+      <span>
+        <label>alert when enter pressed</label>
+        <input type="text" v-on:keyup.enter="alertMe">
+      </span>
+    </div>
+    <br>
+    <div>
+      <span>
+        <label>alert when enter or space pressed</label>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+      </span>
+    </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+          x: 0,
+          y: 0
+        },
+        methods: {
+          increase: function(step, event){
+            this.counter += step;
+          },
+          increment: function(){
+            this.counter++;
+          },
+          updateCoordinates: function(event){
+            this.x = event.clientX;
+            this.y = event.clientY;
+          },
+          stopPropagation: function(event){
+            event.stopPropagation();
+          },
+          alertMe: function(){
+            alert('Alert');
+          }
+        }
+      }
+      );
+    </script>
+  </body>
+</html>
