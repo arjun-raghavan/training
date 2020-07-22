@@ -16,27 +16,28 @@
         <div id="effect" :class='{highlight: effect, shrink: !effect}'></div>
       </div>
       <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+      <div :class="[float, 'blue', 'text-color']">I got no class :(</div>
       <div :style="[{ height: '50px', width: '100px' }, {border: '5px solid blue'}]">I got no class :(</div>
       <!-- 3) Let the user enter a class (create some example classes) and attach it -->
       <div>
         <input type="text" v-model="className">
-        <div :class=[className]></div>
+        <div :class="[ 'box' , className ]"></div>
       </div>
       <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
       <div>
-        <input type="text">
-        <input type="text">
-        <div></div>
+        <input type="text" v-model="className">
+        <input type="text" v-model="isVisible">
+        <div :class="[ {box: isVisible} , className ]">{{isVisible}}</div>
       </div>
       <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
       <div>
-        <input type="text">
-        <div></div>
+        <input type="text" v-model='myStyle.backgroundColor'>
+        <div :style='myStyle'></div>
       </div>
       <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
       <div>
-        <button>Start Progress</button>
-        <div></div>
+        <button @click="startProgress">Start Progress</button>
+        <div :class="['progress-bar-bg']" :style='progressBar'></div>
       </div>
     </div>
     <script>
@@ -44,17 +45,40 @@
         el: '#exercise',
         data: {
             effect: true,
-            className: 'highlight'
+            className: '',
+            isVisible: true,
+            myStyle: {
+              height: '200px',
+              width: '200px',
+              backgroundColor: 'gray',
+              border: '5px dotted yellow'
+            },
+            progressBar:{
+              width: '0px',
+              backgroundColor: 'red'
+            }
         },
         computed: {
         },
         methods:{
           startEffect: function(){
-          var vm = this;
-          setInterval(() => {
-            vm.effect = !vm.effect;
-          }, 1000);
-        }
+            var vm = this;
+            setInterval(() => {
+              vm.effect = !vm.effect;
+            }, 1000);
+          },
+          startProgress: function(){
+            var self = this;
+            width = 0;
+            setInterval(() => {
+              width += 10;
+              if(width > 100){
+                width = 0;
+              }
+              self.progressBar.width = width + 'px';
+              
+            }, 1000);
+          }
         }
 
       }
@@ -62,12 +86,6 @@
     </script>
   </body>
     <style>
-        .demo{
-            width: 100px;
-            height: 100px;
-            background-color: gray;
-            display: inline-block;
-            margin: 10px;
-        }
+
     </style>
 </html>
