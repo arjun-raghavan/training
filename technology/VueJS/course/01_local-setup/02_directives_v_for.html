@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3>V-FOR</h3>
+      <ul>
+        <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} - {{ i }}</li>
+      </ul>
+      <button @click="ingredients.push(Math.floor((Math.random() * 100)))">Add Entry</button>
+      <h3>V-FOR Template</h3>
+      <template v-for="(ingredient, i) in ingredients">
+        <h5>{{ingredient}}</h5>
+        <p>{{ i }}</p>
+      </template>
+      <hr>
+      <h3>V-FOR Objects</h3>
+      <ul>
+        <li v-for="person in persons">
+          <div v-for="(value, key, index) in person">[{{index}}] {{key}}: {{value}} </div>
+        </li>
+      </ul>
+      <h3>V-FOR Numbers</h3>
+      <span v-for="n in 5">{{n}}</span>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data:{
+          ingredients: ['meat', 'fruit', 'cookies'],
+          persons: [
+            {name: 'John', age: 17, color: 'red'},
+            {name: 'Jane', age: 'unknown', color: 'blue'}
+          ]
+        }
+      }
+      );
+    </script>
+  </body>
+</html>
