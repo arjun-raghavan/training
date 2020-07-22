@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div 
+        class="demo" 
+        @click="attachedRed = !attachedRed"
+        :class="{red: attachedRed, blue: !attachedRed}"></div>
+        <!-- Using computed -->
+      <div class="demo" :class="divClasses"></div>
+      
+      <hr>
+      <h2>Class through input</h2>
+      <div class="demo" :class="color"></div>
+      <br>
+      <input type="text" v-model="color">
+      <hr>
+      <h2>Multiple Class</h2>
+      <div class="demo" :class="[color, {red: attachedRed}]"></div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+            attachedRed: false,
+            color: 'green'
+        },
+        computed: {
+            divClasses: function(){
+                return {
+                    red: this.attachedRed,
+                    blue: !this.attachedRed
+                };
+            }
+        }
+      }
+      );
+    </script>
+  </body>
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</html>
