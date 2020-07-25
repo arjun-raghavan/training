@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app1">
+      <h1 ref="heading">{{ title }}</h1>
+      <button v-on:click="show" ref="myButton">Show Paragraph</button>
+      <p v-if="showParagraph">This is not always visible</p>
+    </div>
+    <div id="app2">
+      <h1 ref="heading">{{ title }}</h1>
+      <button v-on:click="onChange">Change something in vue 1</button>
+    </div>
+
+    <div id="app3">
+
+    </div>
+    <script>
+      var data = {
+          title: 'The VueJS Instance',
+          showParagraph: false
+        };
+
+      var vm1 = new Vue({
+        el: '#app1',
+        data: data,
+        methods: {
+          show: function() {
+            this.showParagraph = true;
+            this.updateTitle('The VueJS Instance (Updated)');
+            console.log(this.$refs)
+            this.$refs.myButton.innerText = "test";
+          },
+          updateTitle: function(title) {
+            this.title = title;
+          }
+        },
+        computed: {
+          lowercaseTitle: function() {
+            return this.title.toLowerCase();
+          }
+        },
+        watch: {
+          title: function(value) {
+            alert('Title changed, new value: ' + value);
+          }
+        }
+      });
+
+    console.log(vm1.$data === data);
+    vm1.$refs.heading.innerText = "some text";
+
+    setTimeout(() => {
+      // vm1.title = 'changed by timer'  
+      vm1.show();
+    }, 3000);
+
+    // You can set a new property on vm1, it is normal JS. but you cant use it within instance
+    // VueJS is not watching on this property
+    vm1.newProperty = "new poperty";
+    console.log(vm1);
+    // the newProperty dont have getters and setters
+
+    var vm2 = new Vue({
+      // el: '#app2',
+      data: {
+        title: 'The VueJS Instance',
+        showParagraph: false
+      },
+      methods:{
+        onChange: function(){
+          vm1.title = "new title";
+        }
+      }
+    });
+
+    vm2.$mount('#app2');
+
+    // Creating own template
+    var vm3 = new Vue({
+      template: '<h1>hello</h1>'
+    });
+
+    //vm3.$mount('#app3');
+    
+    vm3.$mount(); //create it off screen
+    document.getElementById('app3').appendChild(vm3.$el);
+
+    </script>
+  </body>
+</html>
