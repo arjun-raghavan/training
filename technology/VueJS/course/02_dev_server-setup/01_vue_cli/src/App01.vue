@@ -1,18 +1,18 @@
 <template>
   <div>
-    <app-server-status :style="{backgroundColor: color}"></app-server-status>
+    <app-servers :style="{backgroundColor: color}"></app-servers>
     <hr>
-    <Comp/>
+    <app-server-status v-for="server in 5" :key="server"></app-server-status>
   </div>
 </template>
 
 <script>
 
-  import Comp from './components/ServerState';
+  import ServerStatus from './components/ServerStatus';
 
   export default {
     components: {
-      Comp
+      'app-server-status': ServerStatus
     },
     data(){
       return {
