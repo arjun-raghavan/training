@@ -7,6 +7,9 @@ import ServerState from './components/ServerState';
 import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
 
 export const eventBus = new Vue({
+  data:{
+  // can be accessed from all over application
+  },
   methods: {
     changeAge(age){
       this.$emit('event-age-edit', age)
