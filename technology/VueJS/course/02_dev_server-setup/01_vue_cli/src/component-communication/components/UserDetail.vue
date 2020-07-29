@@ -3,6 +3,7 @@
         <h3>You may view the User Details here</h3>
         <p>Many Details</p>
         <p>User Name: {{ name }}</p>
+        <p>User Age: {{ userAge }}</p>
         <p>Reversed Name: {{ reverseName() }}</p>
         <button @click="resetName">Reset my name using event</button>
         <button @click="resetFn()">Reset my name using callback</button>
@@ -19,7 +20,8 @@
                 required: true
                 // default: 'Test' // provide default is required is not true
             },
-            resetFn: Function
+            resetFn: Function,
+            userAge: Number
         },
         methods: {
             reverseName(){
