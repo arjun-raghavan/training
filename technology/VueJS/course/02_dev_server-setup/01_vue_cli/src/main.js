@@ -2,10 +2,11 @@ import Vue from 'vue'
 // import App from './App.vue'
 // import App01 from './App01.vue';
 import ServerState from './components/ServerState';
-// import AppComponentDeepDive from './component-deep-dive/AppComponentDeepDive';
+import AppComponentDeepDive from './component-deep-dive/AppComponentDeepDive';
 // import AppComponentCommunication from "./component-communication/AppComponentCommunication";
-import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
+// import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
 
+export const serverBus = new Vue();
 export const eventBus = new Vue({
   data:{
   // can be accessed from all over application
@@ -22,7 +23,7 @@ Vue.component('app-servers', ServerState);
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppComponentCommunicationEventBus),
+  render: h => h(AppComponentDeepDive),
 }).$mount('#app')
 
 
