@@ -4,7 +4,8 @@
         <p>Many Details</p>
         <p>User Name: {{ name }}</p>
         <p>Reversed Name: {{ reverseName() }}</p>
-        <button @click="resetName">Reset my name</button>
+        <button @click="resetName">Reset my name using event</button>
+        <button @click="resetFn()">Reset my name using callback</button>
     </div>
 </template>
 
@@ -17,7 +18,8 @@
                 type: String,
                 required: true
                 // default: 'Test' // provide default is required is not true
-            }
+            },
+            resetFn: Function
         },
         methods: {
             reverseName(){

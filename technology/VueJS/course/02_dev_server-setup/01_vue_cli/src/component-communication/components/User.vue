@@ -9,7 +9,10 @@
             <div class="col-xs-12 col-sm-6">
                 <!-- prints string and not property -->
                 <!-- <app-user-detail name="name"></app-user-detail> -->
-                <app-user-detail :name="name" @event-name-reset="name = $event"></app-user-detail>
+                <app-user-detail 
+                    :name="name" 
+                    :resetFn="callbackResetName"
+                    @event-name-reset="name = $event"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <app-user-edit></app-user-edit>
@@ -31,6 +34,9 @@
         methods: {
             changeName(){
                 this.name = "John"
+            },
+            callbackResetName(){
+                this.name = 'Arjun';
             }
         },
         components: {
