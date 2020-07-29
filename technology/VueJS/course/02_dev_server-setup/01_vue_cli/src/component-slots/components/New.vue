@@ -12,8 +12,17 @@
           counter: 0
         }
       },
+      created(){
+        console.log("new quote component created");
+      },
       destroyed(){
         console.log("new quote component destroyed");
+      },
+      deactivated(){
+        console.log("new quote component deactivated");
+      },
+      activated(){
+        console.log("new quote component activated");
       }        
     }
 </script>
