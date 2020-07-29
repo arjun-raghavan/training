@@ -4,6 +4,7 @@
         <p>Many Details</p>
         <p>User Name: {{ name }}</p>
         <p>Reversed Name: {{ reverseName() }}</p>
+        <button @click="resetName">Reset my name</button>
     </div>
 </template>
 
@@ -21,6 +22,10 @@
         methods: {
             reverseName(){
                 return this.name.split("").reverse().join("");
+            },
+            resetName(){
+                // this.name = "John Wick"; //mutating the prop
+                this.$emit('event-name-reset', "John Wick");
             }
         }     
     }
