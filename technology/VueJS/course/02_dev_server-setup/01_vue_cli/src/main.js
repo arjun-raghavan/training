@@ -6,7 +6,13 @@ import ServerState from './components/ServerState';
 // import AppComponentCommunication from "./component-communication/AppComponentCommunication";
 import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
 
-export const eventBus = new Vue();
+export const eventBus = new Vue({
+  methods: {
+    changeAge(age){
+      this.$emit('event-age-edit', age)
+    }
+  }
+});
 Vue.component('app-servers', ServerState);
 
 

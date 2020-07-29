@@ -16,7 +16,8 @@
             editAge(){
                 // this.userAge = 20; this will change only locally. donot mutate the props
                 // this.$emit('event-age-edit', 20);
-                eventBus.$emit('event-age-edit', 20)
+                // eventBus.$emit('event-age-edit', 20)
+                eventBus.changeAge(20);
             }
         }
     }
