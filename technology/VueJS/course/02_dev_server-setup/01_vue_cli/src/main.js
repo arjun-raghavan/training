@@ -5,7 +5,8 @@ import ServerState from './components/ServerState';
 // import AppComponentDeepDive from './component-deep-dive/AppComponentDeepDive';
 // import AppComponentCommunication from "./component-communication/AppComponentCommunication";
 // import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
-import AppComponentSlots from './component-slots/AppComponentSlots';
+// import AppComponentSlots from './component-slots/AppComponentSlots';
+import AppAssignment from './component-assignment-08/AppAssignment';
 
 export const serverBus = new Vue();
 export const eventBus = new Vue({
@@ -24,7 +25,7 @@ Vue.component('app-servers', ServerState);
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppComponentSlots),
+  render: h => h(AppAssignment),
 }).$mount('#app')
 
 
