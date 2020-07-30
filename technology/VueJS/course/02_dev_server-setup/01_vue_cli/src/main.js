@@ -12,7 +12,8 @@ import ServerState from './components/ServerState';
 // import AppFormsAssignment from "./forms/AppFormsAssignment"
 // import AppDirectives from "./directives/AppDirectives"
 // import AppDirectiveAssignment from "./directives/AppDirectiveAssignment"
-import AppMixinsFilters from "./mixins&filters/AppMixinsFilters";
+// import AppMixinsFilters from "./mixins&filters/AppMixinsFilters";
+import AppMixins from "./mixins&filters/AppMixins";
 
 
 
@@ -52,11 +53,16 @@ Vue.directive('highlight',{
 Vue.filter('filter-to-lowercase',(value) => {
   return value.toLowerCase();
 });
+Vue.mixin({
+  created(){
+    console.log("global mixin created");
+  }
+});
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppMixinsFilters),
+  render: h => h(AppMixins),
 }).$mount('#app')
 
 
