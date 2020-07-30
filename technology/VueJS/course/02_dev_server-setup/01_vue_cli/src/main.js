@@ -7,7 +7,10 @@ import ServerState from './components/ServerState';
 // import AppComponentCommunicationEventBus from "./component-communication-eventbus/AppComponentCommunicationEventBus"
 // import AppComponentSlots from './component-slots/AppComponentSlots';
 // import AppAssignment from './component-assignment-08/AppAssignment';
-import AppComponentQuotesProject from './component-quotes-project/AppComponentQuotesProject';
+// import AppComponentQuotesProject from './component-quotes-project/AppComponentQuotesProject';
+// import AppForms from "./forms/AppForms"
+import AppFormsAssignment from "./forms/AppFormsAssignment"
+
 
 export const serverBus = new Vue();
 export const eventBus = new Vue({
@@ -26,7 +29,7 @@ Vue.component('app-servers', ServerState);
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppComponentQuotesProject),
+  render: h => h(AppFormsAssignment),
 }).$mount('#app')
 
 
