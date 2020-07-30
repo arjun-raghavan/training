@@ -11,7 +11,8 @@ import ServerState from './components/ServerState';
 // import AppForms from "./forms/AppForms"
 // import AppFormsAssignment from "./forms/AppFormsAssignment"
 // import AppDirectives from "./directives/AppDirectives"
-import AppDirectiveAssignment from "./directives/AppDirectiveAssignment"
+// import AppDirectiveAssignment from "./directives/AppDirectiveAssignment"
+import AppMixinsFilters from "./mixins&filters/AppMixinsFilters";
 
 
 
@@ -48,11 +49,14 @@ Vue.directive('highlight',{
     
   }  
 });//usage : v-highlight
+Vue.filter('filter-to-lowercase',(value) => {
+  return value.toLowerCase();
+});
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppDirectiveAssignment),
+  render: h => h(AppMixinsFilters),
 }).$mount('#app')
 
 
