@@ -10,7 +10,9 @@ import ServerState from './components/ServerState';
 // import AppComponentQuotesProject from './component-quotes-project/AppComponentQuotesProject';
 // import AppForms from "./forms/AppForms"
 // import AppFormsAssignment from "./forms/AppFormsAssignment"
-import AppDirectives from "./directives/AppDirectives"
+// import AppDirectives from "./directives/AppDirectives"
+import AppDirectiveAssignment from "./directives/AppDirectiveAssignment"
+
 
 
 export const serverBus = new Vue();
@@ -50,7 +52,7 @@ Vue.directive('highlight',{
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppDirectives),
+  render: h => h(AppDirectiveAssignment),
 }).$mount('#app')
 
 
