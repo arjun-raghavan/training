@@ -6,7 +6,7 @@ import VueResource from 'vue-resource'
 import AppHttpVueResource from './vue-resource/AppHttpVueResource'
 
 Vue.use(VueResource)
-Vue.http.options.root = ''
+Vue.http.options.root = 'https://<>.firebaseio.com/'
 
 // interceptors - array of functions
 Vue.http.interceptors.push((request, next) => {
