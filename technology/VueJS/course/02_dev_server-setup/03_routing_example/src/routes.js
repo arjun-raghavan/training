@@ -4,14 +4,28 @@ import UserDetail from "./components/user/UserDetail.vue";
 import UserEdit from "./components/user/UserEdit.vue";
 import Home from "./components/Home.vue";
 import Profile from "./components/Profile.vue";
+import Header from "./components/Header.vue";
 
 export const routes = [
   // {path: '/user/:id', component: User},
-  {path: '/user', component: User, children: [
-    {path: "", component: UserStart},
-    {path: ":id", component: UserDetail},
-    {path: ":id/edit", component: UserEdit, name: 'userEdit'}
+  {
+    path: '/user', 
+    components: {
+      default: User,
+      'header-bottom': Header},
+    children: [
+      {path: "", component: UserStart},
+      {path: ":id", component: UserDetail},
+      {path: ":id/edit", component: UserEdit, name: 'userEdit'}
   ]},
-  {path: '', component: Home, name: 'home'},
+  {
+    path: '', 
+    name: 'home', 
+    components: {
+      default: Home,
+      'header-top': Header
+    }},
   {path: '/profile', component: Profile},
+  {path: '/redirect-me', redirect: '/user'},
+  {path: '*', redirect: '/'}
 ]
