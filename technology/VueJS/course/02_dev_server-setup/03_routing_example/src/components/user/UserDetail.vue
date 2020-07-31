@@ -35,6 +35,15 @@
             }
         },
         beforeRouteEnter(to, from, next) {
+            // you can access your view instance here. The component is not loaded.
+            // component is loaded only after next() is called.
+            // a way to access once component is loaded - function callback
+            /*
+                next(vm => {
+                    vm.link;
+                })
+            */
+
             if (true) {
                 next();
             } else {
