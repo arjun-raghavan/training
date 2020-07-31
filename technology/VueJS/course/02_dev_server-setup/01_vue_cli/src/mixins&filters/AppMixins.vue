@@ -9,6 +9,7 @@
                 <ul>
                     <li v-for="fruit in filteredFruits" :key="fruit">{{fruit}}</li>
                 </ul>
+                <button class="btn btn-primary" @click="fruits.push('item-'+ Math.round(Math.random()*10))">Add new item</button>
                 <hr>
                 <app-mixins-list></app-mixins-list>
             </div>

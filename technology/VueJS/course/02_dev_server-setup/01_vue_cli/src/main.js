@@ -13,9 +13,9 @@ import ServerState from './components/ServerState';
 // import AppDirectives from "./directives/AppDirectives"
 // import AppDirectiveAssignment from "./directives/AppDirectiveAssignment"
 // import AppMixinsFilters from "./mixins&filters/AppMixinsFilters";
-import AppMixins from "./mixins&filters/AppMixins";
-
-
+// import AppMixins from "./mixins&filters/AppMixins";
+// import AppMixinsFiltersAssignment from "./mixins&filters/AppMixinsFiltersAssignment";
+import AppHttpVueResource from "./vue-resource/AppHttpVueResource"
 
 export const serverBus = new Vue();
 export const eventBus = new Vue({
@@ -53,6 +53,9 @@ Vue.directive('highlight',{
 Vue.filter('filter-to-lowercase',(value) => {
   return value.toLowerCase();
 });
+Vue.filter('filter-word-count',(value) =>{
+  return value + '('+value.length +" )"
+});
 Vue.mixin({
   created(){
     console.log("global mixin created");
@@ -62,7 +65,7 @@ Vue.mixin({
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(AppMixins),
+  render: h => h(AppHttpVueResource),
 }).$mount('#app')
 
 
