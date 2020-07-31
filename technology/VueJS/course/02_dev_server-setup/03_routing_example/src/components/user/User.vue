@@ -4,6 +4,8 @@
     <hr>
     <p>Loaded ID: {{id}}</p>
     <button @click="navigateToHome" class="btn btn-primary">Go to home</button>
+    <hr>
+    <router-view></router-view>
 </div>
 
     
