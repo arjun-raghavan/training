@@ -1,12 +1,12 @@
 import Vue from 'vue'
-// import App from './App.vue'
-// import router from './router'
+import App from './App.vue'
+import router from './router'
 // import store from './store'
 import VueResource from 'vue-resource'
-import AppHttpVueResource from './vue-resource/AppHttpVueResource'
+// import AppHttpVueResource from './vue-resource/AppHttpVueResource'
 
 Vue.use(VueResource)
-Vue.http.options.root = 'https://<>.firebaseio.com/'
+Vue.http.options.root = 'https://apphttpvueresource.firebaseio.com/'
 
 // interceptors - array of functions
 Vue.http.interceptors.push((request, next) => {
@@ -23,7 +23,7 @@ Vue.http.interceptors.push((request, next) => {
 Vue.config.productionTip = false
 
 new Vue({
-  // router,
+  router,
   // store,
-  render: h => h(AppHttpVueResource)
+  render: h => h(App)
 }).$mount('#app')

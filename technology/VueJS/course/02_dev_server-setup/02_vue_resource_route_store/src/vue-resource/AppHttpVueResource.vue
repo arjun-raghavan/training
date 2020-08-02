@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <h1>https://<>.firebaseio.com/</h1>
+                <h1>https://apphttpvueresource.firebaseio.com/</h1>
 
                 <div class="form-group">
                     <label>Username</label>
@@ -55,12 +55,12 @@ export default {
       this.resource.saveAlt(this.user)
     },
     submit () {
-    //   this.$http.post('https://<>.firebaseio.com/data.json', this.user)
+    //   this.$http.post('https://apphttpvueresource.firebaseio.com/data.json', this.user)
       this.$http.post('data.json', this.user)
         .then(response => { console.log(response) }, error => { console.log(error) })
     },
     fetchData () {
-    //   this.$http.get('https://<>.firebaseio.com/data.json')
+    //   this.$http.get('https://apphttpvueresource.firebaseio.com/data.json')
       this.$http.get('data.json')
         .then(response => {
           return response.json()
