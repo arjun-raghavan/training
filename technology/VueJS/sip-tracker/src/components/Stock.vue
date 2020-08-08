@@ -3,13 +3,13 @@
     <br>
     <div class="panel panel-default">
       <!-- SUMMARY -->
-      <div class="panel-heading title">{{stock.name | fitlerToCaps}}</div>
+      <div class="panel-heading title">{{computedStock.name | fitlerToCaps}}</div>
       <div class="panel-body">
         <table>
           <td class="card">
             <label for="qty">Qty</label>
             <br>
-            <span class="label label-default">{{stock.totalQuantity}}</span>
+            <span class="label label-default">{{computedStock.totalQuantity}}</span>
           </td>
           <td class="card">
             <label for="qty">Average Price</label>
@@ -29,7 +29,9 @@
           <td class="card">
             <label>Profit</label>
             <br>
-            <span class="label label-default">{{profitLoss | filterToFixed}}</span>
+            <span class="label"
+              :class="{ loss: profitLoss < 0, gain: profitLoss > 0 }">
+              {{profitLoss | filterToFixed}}</span>
           </td>
         </table>
       </div>
@@ -46,19 +48,18 @@
         <th>STCG</th>
         <th>%</th>
         </tr>
-        <tr v-for="(investment, index) in stock.investments" :key="index">
+        <tr v-for="(investment, index) in computedStock.investments" :key="index">
         <td>{{investment.date}}</td>
         <td>{{investment.qty}}</td>
         <td>{{investment.price}}</td>
         <td>{{stock.currentPrice}}</td>
-        <td :class="{loss: ltcg(investment, stock) < 0, gain: ltcg(investment, stock) > 0 }">
-          {{ltcg(investment, stock)}}
+        <td :class="{ loss: investment.ltcg < 0, gain: investment.ltcg > 0 }">
+          {{investment.ltcg}}
         </td>
-        <td :class="{loss: stcg(investment, stock) >= 0 ? false : true,
-                      gain: stcg(investment, stock) > 0 ? true : false}">
-          {{stcg(investment, stock)}}
+        <td :class="{ loss: investment.stcg < 0, gain: investment.stcg > 0 }">
+          {{investment.stcg}}
         </td>
-        <td>{{returns(investment, stock)}}</td>
+        <td>{{returns(investment, computedStock)}}</td>
         </tr>
       </table>
     </div>
@@ -74,14 +75,20 @@ export default {
     };
   },
   computed: {
-    localStocks() {
-      return this.stock;
+    computedStock() {
+      const localInvestments = this.stock.investments.map((item) => {
+        const lCapitalGains = { ltcg: this.ltcg(item, this.stock) };
+        const sCapitalGains = { stcg: this.stcg(item, this.stock) };
+        return { ...item, ...lCapitalGains, ...sCapitalGains };
+      });
+      const computedProps = { ...this.stock, investments: localInvestments };
+      return computedProps;
     },
     investedValue() {
-      return this.stock.totalQuantity * this.averageInvestment;
+      return this.computedStock.totalQuantity * this.averageInvestment;
     },
     currentValue() {
-      return this.stock.totalQuantity * this.stock.currentPrice;
+      return this.computedStock.totalQuantity * this.computedStock.currentPrice;
     },
     profitLoss() {
       return this.currentValue - this.investedValue;
@@ -89,7 +96,7 @@ export default {
     averageInvestment() {
       let averageValue = 0;
       let count = 0;
-      this.localStocks.investments.forEach((element) => {
+      this.computedStock.investments.forEach((element) => {
         averageValue = (averageValue * count + (element.qty * element.price))
                         / (count + element.qty);
         count += element.qty;
@@ -122,7 +129,6 @@ export default {
       if (numberOfMonths >= 12) {
         return '0';
       }
-      console.log((numberOfMonths));
       return ((stock.currentPrice - investment.price) * investment.qty).toFixed(2);
     },
     dateObject(dateStr) {

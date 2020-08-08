@@ -171,6 +171,21 @@ export default new Vuex.Store({
           { date: '20-7-2020', qty: 1, price: 5906.37 },
         ],
       },
+      {
+        name: 'hdfc amc',
+        totalQuantity: 67,
+        currentDate: '07-08-2020',
+        currentPrice: 2369.00,
+        investments: [
+          { date: '16-12-2019', qty: 50, price: 3154.67 },
+          { date: '30-3-2020', qty: 5, price: 2039.03 },
+          { date: '1-4-2020', qty: 4, price: 2153.03 },
+          { date: '19-6-2020', qty: 2, price: 2444.32 },
+          { date: '22-6-2020', qty: 2, price: 2410.64 },
+          { date: '29-6-2020', qty: 2, price: 2479.18 },
+          { date: '10-7-2020', qty: 2, price: 2534.38 },
+        ],
+      },
     ],
   },
   mutations: {
