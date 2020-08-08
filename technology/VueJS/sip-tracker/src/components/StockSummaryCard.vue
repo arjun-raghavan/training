@@ -1,6 +1,5 @@
 <template>
   <div class="row">
-    <br>
     <div class="panel panel-default">
       <!-- SUMMARY -->
       <div class="panel-heading title">{{computedStock.name | fitlerToCaps}}</div>
@@ -54,33 +53,6 @@
           </td>
         </table>
       </div>
-    </div>
-    <!-- DETAILS -->
-    <div class="panel panel-default">
-      <table id="portfolio">
-        <tr>
-        <th>Date</th>
-        <th>Quantity</th>
-        <th>Invested Price</th>
-        <th>Current Price</th>
-        <th>LTCG</th>
-        <th>STCG</th>
-        <th>%</th>
-        </tr>
-        <tr v-for="(investment, index) in computedStock.investments" :key="index">
-        <td>{{investment.date}}</td>
-        <td>{{investment.qty}}</td>
-        <td>{{investment.price}}</td>
-        <td>{{stock.currentPrice}}</td>
-        <td :class="{ loss: investment.ltcg < 0, gain: investment.ltcg > 0 }">
-          {{investment.ltcg | filterToFixed }}
-        </td>
-        <td :class="{ loss: investment.stcg < 0, gain: investment.stcg > 0 }">
-          {{investment.stcg | filterToFixed}}
-        </td>
-        <td>{{returns(investment, computedStock)}}</td>
-        </tr>
-      </table>
     </div>
   </div>
 </template>
