@@ -177,34 +177,6 @@ export default {
 </script>
 
 <style scoped>
-#portfolio {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#portfolio td, #portfolio th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-#portfolio td.error {
-  border: 1px solid red;
-  background-color: #ffc9ae;
-}
-
-#portfolio tr:nth-child(even){background-color: #f2f2f2;}
-
-#portfolio tr:hover {background-color: #ddd;}
-
-#portfolio th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
 
 .loss{
   border: 1px solid red;

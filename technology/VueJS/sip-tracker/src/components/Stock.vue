@@ -1,60 +1,7 @@
 <template>
   <div class="row">
     <br>
-    <div class="panel panel-default">
-      <!-- SUMMARY -->
-      <div class="panel-heading title">{{computedStock.name | fitlerToCaps}}</div>
-      <div class="panel-body">
-        <table>
-          <td class="card">
-            <label for="qty">Qty</label>
-            <br>
-            <span class="label label-info">{{computedStock.totalQuantity}}</span>
-          </td>
-          <td class="card">
-            <label for="qty">Average Price</label>
-            <br>
-            <span class="label label-primary">{{averageInvestment | filterToFixed}}</span>
-          </td>
-          <td class="card">
-            <label for="qty">Current Price</label>
-            <br>
-            <span class="label label-warning">{{computedStock.currentPrice | filterToFixed}}</span>
-          </td>
-            <td class="card">
-            <label>Invested Value</label>
-            <br>
-            <span class="label label-info">{{investedValue | filterToFixed}}</span>
-          </td>
-          <td class="card">
-            <label>Current Value</label>
-            <br>
-            <span class="label label-info">{{currentValue| filterToFixed}}</span>
-          </td>
-          <td class="card">
-            <label>Profit</label>
-            <br>
-            <span class="label"
-              :class="{ loss: profitLoss < 0, gain: profitLoss > 0 }">
-              {{profitLoss | filterToFixed}}</span>
-          </td>
-          <td class="card">
-            <label>stcg</label>
-            <br>
-            <span class="label"
-              :class="{ loss: stcgSummary < 0, gain: stcgSummary > 0 }">
-              {{stcgSummary | filterToFixed}}</span>
-          </td>
-          <td class="card">
-            <label>ltcg</label>
-            <br>
-            <span class="label"
-              :class="{ loss: ltcgSummay < 0, gain: ltcgSummay > 0 }">
-              {{ltcgSummay | filterToFixed}}</span>
-          </td>
-        </table>
-      </div>
-    </div>
+    <StockSummaryCard :stock="stock"></StockSummaryCard>
     <!-- DETAILS -->
     <div class="panel panel-default">
       <table id="portfolio">
@@ -86,6 +33,7 @@
 </template>
 
 <script>
+import StockSummaryCard from './StockSummaryCard.vue';
 
 export default {
   props: ['stock'],
@@ -201,6 +149,9 @@ export default {
       return yearsDiff;
     },
   },
+  components: {
+    StockSummaryCard,
+  },
 };
 </script>
 
@@ -230,7 +181,7 @@ export default {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #02010e;
   color: white;
 }
 
