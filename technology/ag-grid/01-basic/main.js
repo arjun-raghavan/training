@@ -1,13 +1,13 @@
 var columnDefs = [
-    { field: "make" },
-    { field: "model" },
-    { field: "price" }
+    { field: "make", sortable: true, filter: true },
+    { field: "model", sortable: true, filter: true  },
+    { field: "price", sortable: true, filter: true }
   ];
 
   var rowData = [
-    { make: "Citroen", model: "C5 Aircross", price: 3000000 },
-    { make: "Renault", model: "Kiger", price: 545000 },
-    { make: "Kia", model: "Sonet", price: 679000 }
+    { make: "Citroen", model: "C5 Aircross", price: 3000000},
+    { make: "Renault", model: "Kiger", price: 545000},
+    { make: "Kia", model: "Sonet", price: 679000}
   ];
 
   // let the grid know which columns and what data to use
