@@ -30,3 +30,13 @@ agGrid.simpleHttpRequest({ url: 'https://mockend.com/arjun-raghavan/training/pos
     .then(function (data) {
         gridOptions.api.setRowData(data);
     });
+
+
+function getSelectedRows() {
+    var selectedNodes = gridOptions.api.getSelectedNodes();
+    console.log(selectedNodes);
+    var selectedData = selectedNodes.map(node => node.data);
+    console.log(selectedData);
+    var selectedDataStringPresentation = selectedData.map(node => node.title + ' ' + node.views).join(', ');
+    alert(selectedDataStringPresentation);
+}
