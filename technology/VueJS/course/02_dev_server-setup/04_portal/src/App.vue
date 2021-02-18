@@ -4,6 +4,7 @@
     <Header></Header>
     <v-main>
       <Exception @click.native="launchCaseManagement"></Exception>
+      <DecisionCriteria/>
     </v-main>
     <v-footer app>
     <input type="text" v-model="port"> <input type="text" v-model="casetype">
@@ -14,13 +15,15 @@
 <script>
  import Header from './components/Header';
  import Exception from "./components/Exception";
+ import DecisionCriteria from "./components/DecisionCriteria";
 
 export default {
   name: 'App',
 
   components: {
     Header,
-    Exception
+    Exception,
+    DecisionCriteria
   },
   data: () => ({
     navs: [
