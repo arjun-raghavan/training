@@ -1,23 +1,32 @@
 var columnDefs = [
-    { field: "make", sortable: true, filter: true },
-    { field: "model", sortable: true, filter: true  },
-    { field: "price", sortable: true, filter: true }
-  ];
+    { field: "title", sortable: true, filter: true },
+    { field: "views", sortable: true, filter: true },
+    { field: "createdAt", sortable: true, filter: true }
+];
 
-  var rowData = [
-    { make: "Citroen", model: "C5 Aircross", price: 3000000},
-    { make: "Renault", model: "Kiger", price: 545000},
-    { make: "Kia", model: "Sonet", price: 679000}
-  ];
+// https://mockend.com/arjun-raghavan/training/posts
 
-  // let the grid know which columns and what data to use
-  var gridOptions = {
+var rowData = [
+    { make: "Citroen", model: "C5 Aircross", price: 3000000 },
+    { make: "Renault", model: "Kiger", price: 545000 },
+    { make: "Kia", model: "Sonet", price: 679000 }
+];
+
+// let the grid know which columns and what data to use
+var gridOptions = {
     columnDefs: columnDefs,
-    rowData: rowData
-  };
+    // rowData: rowData
+    rowSelection: 'multiple'
+};
 
-  // lookup the container we want the Grid to use
-  var eGridDiv = document.querySelector('#myGrid');
 
-  // create the grid passing in the div to use together with the columns & data we want to use
-  new agGrid.Grid(eGridDiv, gridOptions);
+// lookup the container we want the Grid to use
+var eGridDiv = document.querySelector('#myGrid');
+
+// create the grid passing in the div to use together with the columns & data we want to use
+new agGrid.Grid(eGridDiv, gridOptions);
+
+agGrid.simpleHttpRequest({ url: 'https://mockend.com/arjun-raghavan/training/posts' })
+    .then(function (data) {
+        gridOptions.api.setRowData(data);
+    });
