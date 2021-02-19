@@ -25,8 +25,31 @@ export default {
   },
   beforeMount() {
     this.columnDefs = [
-      { field: "make", sortable: true, filter: true, checkboxSelection: true },
-      { field: "model", sortable: true, filter: true },
+      {
+        field: "make",
+        sortable: true,
+        filter: true,
+        // checkboxSelection: true,
+        cellRenderer: function (params) {
+          let flag =
+            "<img border='0' width='15' height='10' style='margin-bottom: 2px' src='https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/flags/de.png'>";
+          return flag + " " + params.value;
+        },
+      },
+      { 
+        field: "model", sortable: true, filter: true,
+        cellRenderer: function (params) {
+          let data = params.data;
+          console.log(data);
+          let skills = [];
+          skills.push('<img src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/skills/android.png" width="16px" title="android" />');
+          skills.push('<img src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/skills/css.png" width="16px" title="css" />');
+          skills.push('<img src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/skills/html5.png" width="16px" title="html5" />');
+          skills.push('<img src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/skills/mac.png" width="16px" title="mac" />');
+          skills.push('<img src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/skills/windows.png" width="16px" title="windows" />');
+          return skills.join(' ');
+        },
+      },
       { field: "price", sortable: true, filter: true },
     ];
 
