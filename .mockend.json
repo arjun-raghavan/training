@@ -9,5 +9,36 @@
   "Comment": {
     "body": "string",
     "post": "Post"
+  },
+  "Case": {
+    "WrongfulValue": "int",
+    "F1": "string",
+    "F2": "int",
+    "F3": "string",
+    "F4": "string",
+    "F5": "string",
+    "F6": "string",
+    "F7": "string",
+    "F8": "string",
+    "F9": "string",
+    "F10": "string",
+    "F11": "string",
+    "F12": "string",
+    "F13": "string",
+    "F14": "string",
+    "F15": "string",
+    "F16": "string",
+    "F17": "string",
+    "F18": "string",
+    "F19": "string",
+    "F20": "string",
+    "F21": "string",
+    "F22": "string",
+    "F23": "string",
+    "F24": "string",
+    "F25": "string",
+    "F26": "string",
+    "F27": "string",
+    "createdAt": "date"
   }
 }
