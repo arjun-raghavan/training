@@ -10,7 +10,7 @@
     "body": "string",
     "post": "Post"
   },
-  "Props":{
+  "Prop":{
 	"editable": "boolean",
 	"value":"int",
 	"edited":"boolean",
