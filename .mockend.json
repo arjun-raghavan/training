@@ -18,7 +18,9 @@
   },
   "Case": {
     "WrongfulValue": "int",
-    "F1": "Prop",
+    "F1": {
+		"editable": "boolean"
+	},
     "F2": "int",
     "F3": "int",
     "F4": "int",
