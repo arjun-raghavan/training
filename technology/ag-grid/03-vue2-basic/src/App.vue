@@ -150,6 +150,7 @@ export default {
       { field: "F25", sortable: true, filter: true, resizable: true },
       { field: "F26", sortable: true, filter: true, resizable: true },
       { field: "F27", sortable: true, filter: true, resizable: true },
+      
       {
         field: "Actions",
         sortable: true,

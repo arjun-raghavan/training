@@ -10,9 +10,15 @@
     "body": "string",
     "post": "Post"
   },
+  "Props":{
+	"editable": "boolean",
+	"value":"int",
+	"edited":"boolean",
+	"corresponding":"boolean"
+  },
   "Case": {
     "WrongfulValue": "int",
-    "F1": "string",
+    "F1": "Props",
     "F2": "int",
     "F3": "int",
     "F4": "int",
