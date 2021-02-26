@@ -18,7 +18,7 @@
   },
   "Case": {
     "WrongfulValue": "int",
-    "F1": "Props",
+    "F1": "Prop",
     "F2": "int",
     "F3": "int",
     "F4": "int",
