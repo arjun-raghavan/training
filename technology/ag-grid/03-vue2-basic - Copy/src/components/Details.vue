@@ -1,19 +1,20 @@
 <template>
   <div>
     <ag-grid-vue
-        style="width: 1111px; height: 500px;"
-        class="ag-theme-alpine"
-        :gridOptions="gridOptions"
-        :columnDefs="columnDefs"
-        :rowData="rowData"
-        rowSelection="multiple"
-      >
-      </ag-grid-vue>
-    </div>
+      style="width: 1111px; height: 500px"
+      class="ag-theme-alpine"
+      :gridOptions="gridOptions"
+      :columnDefs="columnDefs"
+      :rowData="rowData"
+      rowSelection="multiple"
+    >
+    </ag-grid-vue>
+  </div>
 </template>
 
 <script>
 import { AgGridVue } from "ag-grid-vue";
+import { eventBus } from "./../main.js";
 
 export default {
   name: "Details",
@@ -56,6 +57,8 @@ export default {
         headerName: "Material Number",
         sortable: true,
         filter: true,
+        suppressToolPanel: true,
+        setColumnVisible: false,
         // checkboxSelection: true,
         cellRenderer: function (params) {
           let flag =
@@ -92,13 +95,13 @@ export default {
         filter: true,
         resizable: true,
       },
-      {
-        field: "F4",
-        headerName: "Customer Ship To",
-        sortable: true,
-        filter: true,
-        resizable: true,
-      },
+      // {
+      //   field: "F4",
+      //   headerName: "Customer Ship To",
+      //   sortable: true,
+      //   filter: true,
+      //   resizable: true,
+      // },
       {
         field: "F5",
         headerName: "Material ID",
@@ -182,6 +185,7 @@ export default {
     // ];
   },
   mounted() {
+    console.log("Details.mounted", this.gridOptions);
     this.gridColumnApi = this.gridOptions.columnApi;
     var allColumnIds = [];
     this.gridOptions.columnApi.getAllColumns().forEach(function (column) {
@@ -189,6 +193,43 @@ export default {
     });
 
     this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
+
+    eventBus.$on("saveModal", (selectedColumns) => {
+      this.showModal = false;
+      this.selected = selectedColumns;
+      var list = [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6",
+        "F7",
+        "F8",
+        "F9",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F14",
+        "F15",
+        "F16",
+        "F17",
+        "F18",
+        "F19",
+        "F20",
+        "F21",
+        "F22",
+        "F23",
+        "F24",
+        "F25",
+        "F26",
+        "F27",
+      ];
+      let difference = list.filter((x) => !selectedColumns.includes(x));
+      this.gridOptions.columnApi.setColumnsVisible(selectedColumns, true);
+      this.gridOptions.columnApi.setColumnsVisible(difference, false);
+    });
   },
 };
 </script>

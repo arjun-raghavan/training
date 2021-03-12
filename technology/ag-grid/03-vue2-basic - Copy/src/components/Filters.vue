@@ -1,5 +1,16 @@
 <template>
-  <div class="accordion" role="tablist">
+  <div
+    class="accordion"
+    role="tablist"
+    style="
+      width: 200px;
+      float: left;
+      height: 500px;
+      background: Gainsboro;
+      margin-right: 5px;
+      overflow: scroll;
+    "
+  >
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
         <b-button block v-b-toggle.accordion-1 variant="info"
@@ -122,7 +133,7 @@
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
         <b-button block v-b-toggle.accordion-10 variant="info"
-          >Exception  Groups & Types</b-button
+          >Exception Groups & Types</b-button
         >
       </b-card-header>
       <b-collapse id="accordion-10" accordion="my-accordion" role="tabpanel">

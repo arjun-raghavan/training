@@ -1,33 +1,34 @@
 <template>
   <div>
     <div class="container">
-      <Header/>
+      <Header />
       <Breadcrumbs />
+      <b-container>
+        <b-row class="text-center" align-v="center" align-h="end">
+          <!-- Button trigger modal -->
+          <b-button size="sm" class="mb-2" @click="showModal = true">
+            <b-icon icon="gear-fill" aria-hidden="true"></b-icon> Edit Columns
+          </b-button>
+        </b-row>
+      </b-container>
+
+      <EditTableColumns :show="showModal" :selectedColumns="selected" />
       <div>
+        <Filters />
         <div>
-          <div
-            style="
-              width: 200px;
-              float: left;
-              height: 500px;
-              background: Gainsboro;
-              margin-right: 5px;
-              overflow: scroll;
-            "
-          >
-            <Filters/>
-          </div>
+          <router-view></router-view>
         </div>
-        <router-view></router-view>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Breadcrumbs from "./components/Breadcrumbs";
-import Filters from "./components/Filters"
+import Filters from "./components/Filters";
+import EditTableColumns from "./components/EditTableColumns";
+import { eventBus } from "./main.js";
 
 export default {
   name: "App",
@@ -36,12 +37,15 @@ export default {
       gridOptions: null,
       columnDefs: null,
       rowData: null,
+      showModal: false,
+      selected: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9"],
     };
   },
   components: {
     Header,
     Breadcrumbs,
-    Filters
+    Filters,
+    EditTableColumns,
   },
   beforeMount() {
     this.gridOptions = {};
@@ -190,15 +194,10 @@ export default {
     fetch("https://mockend.com/arjun-raghavan/training/cases")
       .then((result) => result.json())
       .then((rowData) => (this.rowData = rowData));
-
-    // this.rowData = [
-    //   { make: "Toyota", model: "Celica", price: 35000 },
-    //   { make: "Ford", model: "Mondeo", price: 32000 },
-    //   { make: "Porsche", model: "Boxter", price: 72000 },
-    // ];
   },
   mounted() {
-    this.gridColumnApi = this.gridOptions.columnApi;
+    console.log("mounted");
+    // this.gridColumnApi = this.gridOptions.columnApi;
     var allColumnIds = [];
     this.gridOptions.columnApi.getAllColumns().forEach(function (column) {
       allColumnIds.push(column.colId);
@@ -206,10 +205,37 @@ export default {
 
     this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
   },
+  created() {
+    eventBus.$on("saveModal", (selectedColumns) => {
+      this.showModal = false;
+      this.selected = selectedColumns;
+    });
+
+    eventBus.$on("closeModal", (show) => {
+      console.log("closeModal :", show);
+      this.showModal = false;
+    });
+  },
 };
 </script>
 
 <style lang="scss">
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
 </style>
