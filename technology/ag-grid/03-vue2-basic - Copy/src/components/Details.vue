@@ -51,6 +51,7 @@ export default {
         filter: true,
         pinned: "left",
         resizable: true,
+        // rowGroup: true
       },
       {
         field: "F1",

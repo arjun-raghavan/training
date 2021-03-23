@@ -82,16 +82,16 @@ export default {
   },
   methods: {
     saveModal() {
-      console.log("Emit saveModal");
+      //console.log("Emit saveModal");
       eventBus.$emit("saveModal", this.selected);
     },
     closeModal() {
-      console.log("closeModal");
+      //console.log("closeModal");
       eventBus.$emit("closeModal", !this.show);
     },
   },
   beforeMount() {
-    console.log(this.selectedColumns);
+    //console.log(this.selectedColumns);
     this.selected = this.selectedColumns;
   },
 };

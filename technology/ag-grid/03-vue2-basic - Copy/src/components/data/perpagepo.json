@@ -1,0 +1,10 @@
+{
+    "oldValue": ["123"],
+    "caseTypeID": ["69"],
+    "page": 20,
+    "perPage": 50,
+    "groupBy": "po"
+}
+
+// Response
+Returns POs [951-1000]

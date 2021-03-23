@@ -5,6 +5,7 @@ import About from '../views/About'
 import User from '../components/user/User'
 import Details from '../components/Details'
 import Overview from '../components/Overview'
+import Others from "../components/Others"
 
 Vue.use(VueRouter)
 
@@ -61,9 +62,14 @@ const router = new VueRouter({
           label: 'Custom About page Label',
           parent: 'home' // Here you should use exact string as for name property in "parent" route
         }
-      }
+      },
+    },
+    {
+      path: '/Others',
+      name: 'others',
+      component: Others,
+
     }
-    
   ]
 })
 

@@ -1,0 +1,384 @@
+{
+    "totalCases": 75,
+    "queryTimeStamp": "2021-03-23T07:29:44.986Z",
+    "units": 2060,
+    "groupByCount": 17,
+    "groupBy": [
+        {
+            "totalCases": 3,
+            "units": 0,
+            "name": "0100052695",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 3,
+                    "name": "Reservation Error Zero QTY Available",
+                    "id": 67,
+                    "units": 0,
+                    "caseGroup": "Sourcing & Reservation",
+                    "caseGroupId": "7"
+                }
+            ]
+        },
+        {
+            "totalCases": 4,
+            "units": 0,
+            "name": "2",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 4,
+                    "name": "Region Code Not Found",
+                    "id": 38,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 5,
+            "units": 0,
+            "name": "300",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 5,
+                    "name": "DUOM Round Down QTY Zero",
+                    "id": 40,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 3,
+            "units": 0,
+            "name": "311380-061",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 3,
+                    "name": "Product Lifecycle Is Dormant",
+                    "id": 39,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 5,
+            "units": 0,
+            "name": "337780-057",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 5,
+                    "name": "Variant Material Found Invalid Plant",
+                    "id": 42,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 5,
+            "units": 0,
+            "name": "337780-057-invalid",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 5,
+                    "name": "Variant Material Not Found",
+                    "id": 37,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 1,
+            "units": 0,
+            "name": "337780-057-ivalid",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 1,
+                    "name": "Variant Material Not Found",
+                    "id": 37,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 6,
+            "units": 120,
+            "name": "353fed",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 3,
+                    "name": "Order Type Is Invalid",
+                    "id": 1,
+                    "units": 30,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                },
+                {
+                    "totalCases": 3,
+                    "name": "Order Type Is Missing",
+                    "id": 3,
+                    "units": 90,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                }
+            ]
+        },
+        {
+            "totalCases": 4,
+            "units": 0,
+            "name": "856492-001-invalid",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 4,
+                    "name": "Product ID Is Invalid",
+                    "id": 33,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 10,
+            "units": 700,
+            "name": "895c71",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 2,
+                    "name": "GTIN Is Invalid",
+                    "id": 32,
+                    "units": 40,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "Product Lifecycle Is Inactive",
+                    "id": 34,
+                    "units": 80,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 1,
+                    "name": "Product Not In Offering Period",
+                    "id": 36,
+                    "units": 60,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 1,
+                    "name": "Region Code Not Found",
+                    "id": 38,
+                    "units": 80,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "DUOM Round Down QTY Zero",
+                    "id": 40,
+                    "units": 200,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "Variant Material Found Invalid Plant",
+                    "id": 42,
+                    "units": 240,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 7,
+            "units": 0,
+            "name": "9610",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 7,
+                    "name": "Region Code Not Found",
+                    "id": 38,
+                    "units": 0,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 2,
+            "units": 40,
+            "name": "b49f96",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 1,
+                    "name": "Order Type Is Invalid",
+                    "id": 1,
+                    "units": 10,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                },
+                {
+                    "totalCases": 1,
+                    "name": "Order Type Is Missing",
+                    "id": 3,
+                    "units": 30,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                }
+            ]
+        },
+        {
+            "totalCases": 12,
+            "units": 860,
+            "name": "c04453",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 2,
+                    "name": "Order QTY Is Invalid",
+                    "id": 31,
+                    "units": 20,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "Product ID Is Invalid",
+                    "id": 33,
+                    "units": 60,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 1,
+                    "name": "Size Is Invalid",
+                    "id": 35,
+                    "units": 50,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 1,
+                    "name": "Variant Material Not Found",
+                    "id": 37,
+                    "units": 70,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "Product Lifecycle Is Dormant",
+                    "id": 39,
+                    "units": 180,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "Invalid Promo Material Code",
+                    "id": 41,
+                    "units": 220,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                },
+                {
+                    "totalCases": 2,
+                    "name": "REQ Segment Is Invalid",
+                    "id": 43,
+                    "units": 260,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 1,
+            "units": 20,
+            "name": "c79c86",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 1,
+                    "name": "Order Type Cannot Be Determined",
+                    "id": 2,
+                    "units": 20,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                }
+            ]
+        },
+        {
+            "totalCases": 3,
+            "units": 60,
+            "name": "fab1d8",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 3,
+                    "name": "Order Type Cannot Be Determined",
+                    "id": 2,
+                    "units": 60,
+                    "caseGroup": "Order Type Determination",
+                    "caseGroupId": "1"
+                }
+            ]
+        },
+        {
+            "totalCases": 2,
+            "units": 150,
+            "name": "M",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 2,
+                    "name": "Size Is Invalid",
+                    "id": 35,
+                    "units": 150,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        },
+        {
+            "totalCases": 2,
+            "units": 110,
+            "name": "XXL",
+            "id": null,
+            "caseTypes": [
+                {
+                    "totalCases": 2,
+                    "name": "Size Is Invalid",
+                    "id": 35,
+                    "units": 110,
+                    "caseGroup": "Material Master ",
+                    "caseGroupId": "4"
+                }
+            ]
+        }
+    ]
+}

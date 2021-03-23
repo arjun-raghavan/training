@@ -5,7 +5,7 @@
     <li class="breadcrumb-item"><router-link to="/details">Details</router-link></li>
   </ol> -->
 
-     <b-breadcrumb>
+    <b-breadcrumb>
       <b-breadcrumb-item
         to="/overview"
         active-class="active"
@@ -19,6 +19,14 @@
         v-b-tooltip.hover
         title="Details View Of Exceptions"
         >Details</b-breadcrumb-item
+      >
+
+      <b-breadcrumb-item
+        to="/others"
+        active-class="active"
+        v-b-tooltip.hover
+        title="Others"
+        >Others</b-breadcrumb-item
       >
     </b-breadcrumb>
   </nav>

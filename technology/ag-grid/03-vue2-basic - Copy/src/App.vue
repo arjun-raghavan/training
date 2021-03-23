@@ -198,12 +198,12 @@ export default {
   mounted() {
     console.log("mounted");
     // this.gridColumnApi = this.gridOptions.columnApi;
-    var allColumnIds = [];
-    this.gridOptions.columnApi.getAllColumns().forEach(function (column) {
-      allColumnIds.push(column.colId);
-    });
+    // var allColumnIds = [];
+    // this.gridOptions.columnApi.getAllColumns().forEach(function (column) {
+    //   allColumnIds.push(column.colId);
+    // });
 
-    this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
+    // this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
   },
   created() {
     eventBus.$on("saveModal", (selectedColumns) => {
